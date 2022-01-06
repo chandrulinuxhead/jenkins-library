@@ -1,3 +1,6 @@
-def call(){
-  sh 'echo hello world"
+def call(String shellCmd=null){
+  if (!shellCmd) {
+    shellCmd = “echo hello world”;
+}
+sh(script: “${shellCmd}”);
 }
